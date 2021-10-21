@@ -7,6 +7,8 @@ I lost some time while writing the tests and I loaded the project without doing 
 
 I think I spent 4 5 hours.
 
+Note after 10.22.2021 00.30, image test has been added.
+
 # How to use this code?
 
 1. Make sure you have [Java 15] installed

@@ -3,10 +3,7 @@ package com.insta.controller;
 import com.insta.model.Image;
 import com.insta.service.ImageService;
 import io.swagger.annotations.Api;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -20,10 +17,10 @@ import java.util.Objects;
 @RestController
 @RequestMapping("/image")
 @Api(tags = "image")
+@RequiredArgsConstructor
 public class ImageController {
 
-    @Autowired
-    private ImageService imageService;
+    private final ImageService imageService;
 
     @PostMapping
     @PreAuthorize("hasRole('ROLE_CLIENT')")

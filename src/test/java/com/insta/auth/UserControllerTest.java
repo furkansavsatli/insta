@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.ArrayList;
@@ -25,15 +24,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 @AutoConfigureWebTestClient
-public class UserIntegrationTest {
+public class UserControllerTest {
     @Autowired
     MockMvc mockMvc;
     @Autowired
     JwtTokenProvider jwtTokenProvider;
     @Autowired
     UserService userService;
-    @MockBean
-    ImageController imageController;
 
     @BeforeEach
     public void setUp() {
@@ -45,7 +42,6 @@ public class UserIntegrationTest {
 
         userService.signup(admin);
     }
-
     @Test
     public void testAuth() throws Exception {
         String token = jwtTokenProvider.createToken("admin", Collections.singletonList(AppUserRole.ROLE_CLIENT));
@@ -55,4 +51,6 @@ public class UserIntegrationTest {
         mockMvc.perform(get("/tweet").header("Authorization", token)).andExpect(status().isNotFound());
         mockMvc.perform(get("/image").header("Authorization", token)).andExpect(status().isOk());
     }
+
+
 }
