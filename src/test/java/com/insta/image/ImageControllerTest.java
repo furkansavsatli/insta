@@ -1,4 +1,4 @@
-package com.insta.auth;
+package com.insta.image;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.insta.controller.ImageController;
