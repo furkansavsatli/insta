@@ -1,5 +1,5 @@
 
-First of all, I chose the h2 im memory database so that there is no need for installation. Then I looked at new sample projects from github that do auth operations with h2 database. I wasted some time trying to find a new and working project here. The last time I took a project with minor errors and fixed it. For example token was returning null, I fixed it. I changed the swagger path.
+First of all, I chose the h2 im memory database so that there is no need for installation. Then I looked at new sample projects from github that do auth operations with h2 database. I wasted some time trying to find a new and working project here. The last time I took a project with minor errors and fixed it. For example token was returning null, I fixed it. I changed the swagger path. I deleted unnecessary interfaces and features etc.
 
 Then I coded the image service needs with a new controller.
 
